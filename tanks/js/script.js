@@ -50,6 +50,11 @@ $(function(){
     }
   }
 
+  var shot1 = {
+    x: p1t1mouseX,
+    y: p1t1mouseY
+  }
+
 
   tank1.rotateTurret();
 
@@ -153,6 +158,8 @@ currentTank = tank1
       case 0:
         tank1.x = mousePos.mouseX; 
         tank1.y = mousePos.mouseY;
+        shot1.x = mousePos.mouseX;
+        shot1.y = mousePos.mouseY;
         console.log(tank1)
         console.log(tank_1)
         turn += 1;
@@ -196,7 +203,10 @@ currentTank = tank1
       tank1.turretAngle += 0.2;
       if(tank1.turretAngle > 6) tank1.turretAngle = 0;
     }
-  });
+    if(evt.keyCode === 32) {
+      shot1.x += 5
+      shot1.y += 5
+    } });
 
 
   function addShape(shape){
@@ -215,7 +225,8 @@ currentTank = tank1
     ctx.rotate(tank1.turretAngle);
     ctx.drawImage(tank1.turret, -38, -25, 56, 56);
     ctx.restore();
-    ctx.drawImage((circle(tank1.x+32, tank1.y+20, 10)),)
+    console.log(shot1.x)
+    circle(shot1.x, shot1.y, 10);
     ctx.drawImage(tank_1, p1t2mouseX, p1t2mouseY, 36, 36);
 
     ctx.drawImage(tank_1, p1t3mouseX, p1t3mouseY, 36, 36);
