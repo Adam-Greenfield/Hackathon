@@ -1,0 +1,16 @@
+/*body {
+    background-repeat: no-repeat;
+    background-position: center; 
+}*/
+
+#myCanvas {
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#arctic {
+background-size: fill;
+}
