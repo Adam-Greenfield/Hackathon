@@ -149,10 +149,7 @@
 
 $(function(){
   canvas = document.getElementById('myCanvas');
-  fightWar = document.getElementById('fight');
-    fightWar.addEventListener('click', function(){
-      audio.["audio/test.mp3"].play();
-    })
+  
   // $('canvas').click{
   //   console.log(click)
   // };
@@ -312,7 +309,7 @@ $(function(){
 
     var shapes = self.shapes;
 
-}
+};
   initialize();
 });
 
