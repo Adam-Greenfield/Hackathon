@@ -149,7 +149,7 @@
 
 
 
-
+var Tank = [];
 
 
 $(function(){
@@ -176,6 +176,13 @@ $(function(){
     ctx.fill();
     ctx.closePath();
   }
+
+  function tank1(){
+    tank1 = new Tank(game, "/css/images/Tank-bottom2.jpg", 25, 25)
+    tank1.setSpeed(0);
+    tank1.setPosition(p1t1mouseX, p1t1mouseY);
+  }
+
 
   function writeMessage(canvas, message) {
     var context = canvas.getContext('2d');
@@ -218,15 +225,22 @@ $(function(){
     console.log(self.shapes);
   }
 
+  function addTank(tank1){
+    self.Tank.push(tank1);
+    console.log(self.tank1);
+  }
+
   function clear(){
     ctx.clearRect(0, 0, WIDTH, HEIGHT);
   }
 
   function draw(){
     // clear();
-    circle(p1t1mouseX, p1t1mouseY, 10)
-    var ctx = this.ctx;
+    // tank1(p1t1mouseX, p1t1mouseY)
+    var ctx = self.ctx;
     var shapes = self.shapes;
+    var tank1 = document.getElementById("tank1-img");
+    ctx.drawImage(tank1, p1t1mouseX, p1t1mouseY)
 
 }
   initialize();
