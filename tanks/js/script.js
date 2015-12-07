@@ -50,9 +50,8 @@ $(function(){
     var mousePos = getMousePos(canvas, evt);
     mouseX = mousePos.mouseX; 
     mouseY = mousePos.mouseY;
-    circle(mouseX, mouseY, 10)
   
-    addShape(circle);
+    addShape(circle(mouseX, mouseY, 10));
   });
 
   function addShape(shape){
@@ -60,9 +59,14 @@ $(function(){
     console.log(self.shapes);
   }
 
+  function clear(){
+    ctx.clearRect(0, 0, WIDTH, HEIGHT);
+  }
+
   function draw(){
-  var ctx = this.ctx;
-  var shapes = self.shapes;
+    clear();
+    var ctx = this.ctx;
+    var shapes = self.shapes;
 
 }
 
