@@ -1,5 +1,3 @@
-$(function(){
-  canvas = document.getElementById('myCanvas');
 
 
 
@@ -14,7 +12,12 @@ $(function(){
 
 
 
-}
+
+
+
+// $(function(){
+//   canvas = document.getElementById('myCanvas');
+
 //   var self = this
 //   self.shapes = [];
 
