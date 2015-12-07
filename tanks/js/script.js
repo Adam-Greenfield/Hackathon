@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 var boxes = [];
 
 function Box() {
@@ -35,7 +35,29 @@ var mySelWidth = 2;
 
 var ghostcanvas;
 var gctx;
+var offsetx, offsety;
 
+function init(){
+  canvas.document.getElementById('canvas');
+  HEIGHT = canvas.height;
+  WIDTH = canvas.width;
+  ctx = canvas.getContext('2d');
+  ghostcanvas = document.createElement('canvas');
+  ghostcanvas.height = HEIGHT;
+  ghostcanvas.width = WIDTH;
+  gctx = ghostcanvas.getContext('2d');
+}
+
+canvas.onSelectStart = function () { return false; }
+
+if (document.defaultView && document.defaultView.getComputedStyle) {
+  stylePaddingLeft = parseInt(document.defaultView.getComputedStyle(canvas, null)['paddingLeft'], 10)      || 0;
+  stylePaddingTop  = parseInt(document.defaultView.getComputedStyle(canvas, null)['paddingTop'], 10)       || 0;
+  styleBorderLeft  = parseInt(document.defaultView.getComputedStyle(canvas, null)['borderLeftWidth'], 10)  || 0;
+  styleBorderTop   = parseInt(document.defaultView.getComputedStyle(canvas, null)['borderTopWidth'], 10)   || 0;
+}
+
+setInterval(draw, 10);
 
 
 
