@@ -1,0 +1,52 @@
+#tank_1 {
+  width: 36px;
+  height: 36px;
+}
+/*#tank_2 {
+  width: 36px;
+  height: 36px;
+}*/
+ h1 {
+  margin-top: 80px;
+  font-family: 'Black Ops One', cursive;
+  color: brown;
+  text-shadow: 2px 2px black; 
+  float: right;
+
+ }
+
+
+body {
+   /*position: center;*/
+   background-image: url(http://thevelvetrocket.files.wordpress.com/2012/05/destroyed-tank-west-bank.jpg);
+   background-size: cover ;
+}
+#myStory {
+    font-family: 'Black Ops One', cursive;
+    margin-left:700px;
+    margin-right:auto;
+    top: 500px;
+    width:1000px; 
+/*    position:relative;*/
+}
+/*#myCanvas {
+  float: left;
+}*/
+
+/*.right {
+    float: right;
+    width: 300px;
+    border:3px solid #73AD21;
+    padding: 10px;
+}*/
+/*.fight {
+  float: right;
+}*/
+
+#tankFace {
+   width: 300px;
+    height: auto;
+}
+#fight {
+  float; right;
+}
