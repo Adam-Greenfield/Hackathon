@@ -1,151 +1,4 @@
 
-// $(function(){
-// var boxes = [];
-
-// function Box() {
-//   this.x = 0;
-//   this.y = 0;
-//   this.w = 1; // default width and height?
-//   this.h = 1;
-//   this.fill = '#444444';
-// }
-
-
-// function addRect(x, y, w, h, fill) {
-//   var rect = new Box;
-//   rect.x = x;
-//   rect.y = y;
-//   rect.w = w
-//   rect.h = h;
-//   rect.fill = fill;
-//   boxes.push(rect);
-//   // invalidate();
-// }
-
-// var canvas;
-// var ctx;
-// var WIDTH;
-// var HEIGHT;
-// var INTERVAL = 20;
-// var isDrag = false;
-// var mx, my;
-// var canvasValid = false;
-
-// var mySel;
-// var mySelColor = '#CC0000';
-// var mySelWidth = 2;
-
-// var ghostcanvas;
-// var gctx;
-// var offsetx, offsety;
-
-// function init(){
-//   canvas = document.getElementById('myCanvas');
-//   console.log(canvas);
-//   HEIGHT = canvas.height;
-//   WIDTH = canvas.width;
-//   ctx = canvas.getContext('2d');
-//   ghostcanvas = document.createElement('canvas');
-//   ghostcanvas.height = HEIGHT;
-//   ghostcanvas.width = WIDTH;
-//   gctx = ghostcanvas.getContext('2d');
-
-
-//   canvas.onSelectStart = function () { return false; }
-
-//   if (document.defaultView && document.defaultView.getComputedStyle) {
-//     stylePaddingLeft = parseInt(document.defaultView.getComputedStyle(canvas, null)['paddingLeft'], 10)      || 0;
-//     stylePaddingTop  = parseInt(document.defaultView.getComputedStyle(canvas, null)['paddingTop'], 10)       || 0;
-//     styleBorderLeft  = parseInt(document.defaultView.getComputedStyle(canvas, null)['borderLeftWidth'], 10)  || 0;
-//     styleBorderTop   = parseInt(document.defaultView.getComputedStyle(canvas, null)['borderTopWidth'], 10)   || 0;
-//   }
-
-//   setInterval(draw, INTERVAL);
-
-//   canvas.onmousedown = myDown;
-//   canvas.onmouseup = myUp;
-//   // canvas.ondblclick = myDblClick;
-
-//   addRect(200, 200, 40, 40, '#FFC02B');
-//   addRect(25, 90, 25, 25, '#2BB8FF');
-// }
-// function clear(){
-//   ctx.clearRect(0, 0, WIDTH, HEIGHT);
-// }
-
-// function draw() {
-//   if (canvasValid == false) {
-//     clear();
-
-//     var l = boxes.length;
-//     for (var i = 0; i < l; i++) {
-//       drawshape(ctx, boxes[i], boxes[i].fill);
-//     }
-//     if (mySel != null) {
-//       ctx.strokeStyle = mySelColor;
-//       ctx.lineWidth = mySelWidth;
-//       ctx.strokeRect(mySel.x,mySel.y,mySel.w,mySel.h);
-//     }
-//     canvasValid = true;
-//   }
-// }
-
-
-//   console.log(boxes);
-
-//   function myDown(e){
-//     getMouse(e);
-//     clear(gctx); // clear the ghost canvas from its last use
-//     var l = boxes.length;
-//       for (var i = l-1; i >= 0; i--) {
-//         drawshape(gctx, boxes[i], 'black');
-//         var imageData = gctx.getImageData(mx, my, 1, 1);
-//          var index = (mx + my * imageData.width) * 4;
-//          if (imageData.data[3] > 0) {
-//                mySel = boxes[i];
-//                offsetx = mx - mySel.x;
-//                offsety = my - mySel.y;
-//                mySel.x = mx - offsetx;
-//                mySel.y = my - offsety;
-//                isDrag = true;
-//                canvas.onmousemove = myMove;
-//                invalidate();
-//                clear(gctx);
-//                return;
-//              }
-//            }
-//            mySel = null;
-//            clear(gctx);
-//            invalidate();
-//          }
-//          function myMove(e){
-//            if (isDrag){
-//              getMouse(e);
-             
-//              mySel.x = mx - offsetx;
-//              mySel.y = my - offsety;   
-//              invalidate();
-//            }
-//          }
-
-//          function myUp(){
-//            isDrag = false;
-//            canvas.onmousemove = null;
-//          }
-
-// init();
-// });
-
-
-
-
-
-
-
-
-
-
-
 
 $(function(){
   canvas = document.getElementById('myCanvas');
@@ -202,46 +55,6 @@ $(function(){
 
   }
 
-  // var images = ['arctic.jpg', 'desert.jpg', 'grass.jpg', 'moon.jpg', 'space.jpg', 'whitehouse.png' ];
-
-  // $('#myCanvas').css(
-  //   {'background-image': 'url(./css/images/' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/},
-  //   {'background-size' : "cover"}
-  //   );
-
-//WORKING CODE
-// function arctic(){
-//     $("#myCanvas").css("background-image","url(./css/images/arctic.jpg)");
-//   }
-
-//   function loadimage(){
-//     if (document.getElementById("arctic")){
-//     $('#myCanvas').css(
-//         {'background-image': 'url(./css/images/arctic.jpg' + images[Math.floor(Math.random() * images.length)]+ ')'}
-//         );
-//     } else {
-//       console.log("Not working")
-//     }
-// }
-
-//   var e1 = document.getElementById("arctic");
-//   e1.addEventListener('click', loadimage, false)
-
-//MY CODE
-  //   function loadimage(){
-  //     // if ($('#arctic')){
-  //     // $('#myCanvas').css(
-  //     //     {'background-image': 'url(./css/images/arctic.jpg' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
-  //     //     )
-  //     } else if ($("#desert")) {
-  //       $('#myCanvas').css(
-  //         {'background-image': 'url(./css/images/desert.jpg' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
-  //         );
-  //     } else {
-  //       console.log("Unfinished")
-  //     }
-  // }
-
     var e1 = document.getElementById("arctic");
     e1.addEventListener('click', function(){
       $('#myCanvas').css(
@@ -290,7 +103,7 @@ $(function(){
 
     drawInterval = setInterval(draw, 1);
 
-  }
+  });
 
 
 
@@ -399,7 +212,8 @@ $(function(){
 
     var shapes = self.shapes;
 
-};
+  };
   initialize();
-});
+
+
 
