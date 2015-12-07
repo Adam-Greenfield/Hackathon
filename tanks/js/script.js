@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var boxes = [];
 
 function Box() {
@@ -48,14 +49,25 @@ var gctx;
 
 
 
+
+
+
+
+
+
 // $(function(){
 //   canvas = document.getElementById('myCanvas');
 
+//   var self = this
+//   self.shapes = [];
 
 //   function initialize(){
 //     ctx = canvas.getContext("2d");
 //     WIDTH = canvas.width;
 //     HEIGHT = canvas.height;
+//     var mouseX;
+//     var mouseY;
+//     drawInterval = setInterval(draw, 10);
 //   }
 
 //   function circle(x, y, r){
@@ -80,22 +92,45 @@ var gctx;
 //     };
 //   }
 
+
 //   canvas.addEventListener('mousemove', function(evt) {
 //     var mousePos = getMousePos(canvas, evt);
 //     var message = 'Mouse position: ' + mousePos.mouseX + ',' + mousePos.mouseY;
 //     mouseX = mousePos.mouseX; 
 //     mouseY = mousePos.mouseY;
-//     console.log(mouseX, mouseY);
+//     // console.log(mouseX, mouseY);
 //     writeMessage(canvas, message);
 
 //   }, false);
 
-  
 //   canvas.addEventListener('click', function(evt){
 //     var mousePos = getMousePos(canvas, evt);
+//     mouseX = mousePos.mouseX; 
+//     mouseY = mousePos.mouseY;
+  
 
 
-//   })
+//   function addShape(shape){
+//     self.shapes.push(shape);
+//     console.log(self.shapes);
+//   }
+
+//   function clear(){
+//     ctx.clearRect(0, 0, WIDTH, HEIGHT);
+//   }
+
+//   function draw(){
+//     clear();
+//     var ctx = this.ctx;
+//     var shapes = self.shapes;
+
+// }
+
+
+
+  
+
+
 
 //   initialize();
 // });
