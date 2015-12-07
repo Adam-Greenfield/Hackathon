@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 var boxes = [];
 
 function Box() {
@@ -35,7 +35,6 @@ var mySelWidth = 2;
 
 var ghostcanvas;
 var gctx;
-
 
 
 
