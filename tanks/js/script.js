@@ -1,9 +1,9 @@
+
+
 $(function(){
   canvas = document.getElementById('myCanvas');
-  // fightWar = document.getElementById('fight');
-  //   fightWar.addEventListener('click', function(){
-  //     audio.["audio/test.mp3"].play();
-  //   })
+  
+
   // $('canvas').click{
   //   console.log(click)
   // };
@@ -37,6 +37,7 @@ $(function(){
 
 
 
+
   var tank1 = {
     img: document.getElementById('tank_1'),
     x: p1t1mouseX,
@@ -60,16 +61,65 @@ currentTank = tank1
   var self = this
   self.shapes = [];
 
+
   function initialize(){
     ctx = canvas.getContext("2d");
     WIDTH = canvas.width;
     HEIGHT = canvas.height;
+
+
+  }
+
+    var e1 = document.getElementById("arctic");
+    e1.addEventListener('click', function(){
+      $('#myCanvas').css(
+        {'background-image': 'url(./css/images/arctic.jpg' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
+        )
+      }, false);
+  
+    var e2 = document.getElementById("desert");
+    e2.addEventListener('click', function(){ 
+      $('#myCanvas').css(
+        {'background-image': 'url(./css/images/desert.jpg' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
+        )
+        } , false);
+
+    var e3 = document.getElementById("grass");
+    e3.addEventListener('click', function(){ 
+      $('#myCanvas').css(
+        {'background-image': 'url(./css/images/grass.jpg' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
+        )
+        } , false);
+
+    var e4 = document.getElementById("moon");
+    e4.addEventListener('click', function(){ 
+      $('#myCanvas').css(
+        {'background-image': 'url(./css/images/moon.jpg' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
+        )
+        } , false);
+
+    var e5 = document.getElementById("space");
+    e5.addEventListener('click', function(){ 
+      $('#myCanvas').css(
+        {'background-image': 'url(./css/images/space.jpg' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
+        )
+        } , false);
+
+    var e6 = document.getElementById("whitehouse");
+    e6.addEventListener('click', function(){ 
+      $('#myCanvas').css(
+        {'background-image': 'url(./css/images/whitehouse.png' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
+        )
+        } , false);
+
+
     var mouseX;
     var mouseY;
 
     drawInterval = setInterval(draw, 50);
 
-  }
+
+
 
 
   function circle(x, y, r){
@@ -173,6 +223,7 @@ currentTank = tank1
     ctx.drawImage(tank_1, p2t3mouseX, p2t3mouseY, 36, 36);
 
     var shapes = self.shapes;
+
     $(document).keydown(function(){
       if(event.keyCode == 65){
         ctx = turret_1;
@@ -181,6 +232,11 @@ currentTank = tank1
       }
     })
 }
+
+
+
+
   initialize();
+
 });
 
