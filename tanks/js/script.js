@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+// <<<<<<< HEAD
 var boxes = [];
 
 function Box() {
@@ -67,7 +67,7 @@ $(function(){
     HEIGHT = canvas.height;
     var mouseX;
     var mouseY;
-    drawInterval = setInterval(draw, 10);
+    // drawInterval = setInterval(draw, 10);
   }
 
   function circle(x, y, r){
@@ -107,7 +107,6 @@ $(function(){
     var mousePos = getMousePos(canvas, evt);
     mouseX = mousePos.mouseX; 
     mouseY = mousePos.mouseY;
-  
 
 
   function addShape(shape){
@@ -124,12 +123,6 @@ $(function(){
     var ctx = this.ctx;
     var shapes = self.shapes;
   }
-
-
-
-  
-
-
-
+})
   initialize();
 });
