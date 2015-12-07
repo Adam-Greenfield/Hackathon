@@ -1,13 +1,10 @@
-
-
 $(function(){
   canvas = document.getElementById('myCanvas');
 
   // var tank_1 = new Image();
   // tank_1.src = "/css/images/Tank-bottom2.jpg";
-  var tank_1 = document.getElementById('tank_1');
-  var turret_1 = document.getElementById('turret_1');
-
+  // var tank_1 = document.getElementById('tank_1');
+  var self = this
 
   var p1t1mouseX;
   var p1t1mouseY;
@@ -26,10 +23,17 @@ $(function(){
 
 
   var tank1 = {
+    img: document.getElementById('tank_1'),
     x: p1t1mouseX,
     y: p1t1mouseY,
-    turret: turret_1
+    turret: document.getElementById('turret_1'),
+    rotateTurret: function(){
+      ctx.rotate(5*Math.PI/180);
+    }
   }
+  tank1.rotateTurret();
+
+currentTank = tank1
 
   var currentTank;
   function setCurrentTank(tank){
@@ -87,8 +91,10 @@ $(function(){
     console.log(turn);
     switch(turn){
       case 0:
-        p1t1mouseX = mousePos.mouseX; 
-        p1t1mouseY = mousePos.mouseY;
+        tank1.x = mousePos.mouseX; 
+        tank1.y = mousePos.mouseY;
+        console.log(tank1)
+        console.log(tank_1)
         turn += 1;
         break;
       case 1:
@@ -120,12 +126,7 @@ $(function(){
     // } else {
     })
     // }
-    $(document).keydown(function(){
-      if(event.keyCode == 65){
-        ctx = currentTank;
-        ctx.rotate
-      }
-    })
+
 
   function addShape(shape){
     self.shapes.push(shape);
@@ -138,12 +139,12 @@ $(function(){
 
   function draw(){
     // clear();
+
     var ctx = this.ctx;
-    ctx.drawImage(tank_1, p1t1mouseX, p1t1mouseY, 46, 46);
-    ctx.drawImage(turret_1, p1t1mouseX-15, p1t1mouseY-5, 56, 56)
+    ctx.drawImage(tank1.img, tank1.x, tank1.y, 46, 46);
+    ctx.drawImage(tank1.turret, tank1.x-15, tank1.y-5, 56, 56);
 
     ctx.drawImage(tank_1, p1t2mouseX, p1t2mouseY, 36, 36);
-
 
     ctx.drawImage(tank_1, p1t3mouseX, p1t3mouseY, 36, 36);
 
@@ -152,7 +153,13 @@ $(function(){
     ctx.drawImage(tank_1, p2t3mouseX, p2t3mouseY, 36, 36);
 
     var shapes = self.shapes;
-
+    $(document).keydown(function(){
+      if(event.keyCode == 65){
+        ctx = turret_1;
+        console.log(ctx);
+        ctx.rotate(5);
+      }
+    })
 }
   initialize();
 });
