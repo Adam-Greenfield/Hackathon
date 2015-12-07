@@ -149,13 +149,19 @@
 
 $(function(){
   canvas = document.getElementById('myCanvas');
+  fightWar = document.getElementById('fight');
+    fightWar.addEventListener('click', function(){
+      audio.["audio/test.mp3"].play();
+    })
   // $('canvas').click{
   //   console.log(click)
   // };
   // var tank_1 = new Image();
   // tank_1.src = "/css/images/Tank-bottom2.jpg";
   var tank_1 = document.getElementById('tank_1');
-  
+
+  var turret_1 = document.getElementById('turret_1');
+
 
   var p1t1mouseX;
   var p1t1mouseY;
@@ -171,6 +177,20 @@ $(function(){
   var p2t3mouseX;
   var p2t3mouseY;
 
+  // var audio = getElementId
+
+
+
+  var tank1 = {
+    x: p1t1mouseX,
+    y: p1t1mouseY,
+    turret: turret_1
+  }
+
+  var currentTank;
+  function setCurrentTank(tank){
+    currentTank = tank
+  }
 
   var self = this
   self.shapes = [];
@@ -181,9 +201,11 @@ $(function(){
     HEIGHT = canvas.height;
     var mouseX;
     var mouseY;
-    drawInterval = setInterval(draw, 10);
-    
+
+    drawInterval = setInterval(draw, 1);
+
   }
+
 
   function circle(x, y, r){
     ctx.beginPath();
@@ -257,7 +279,12 @@ $(function(){
     // } else {
     })
     // }
-  
+    $(document).keydown(function(){
+      if(event.keyCode == 65){
+        ctx = currentTank;
+        ctx.rotate
+      }
+    })
 
   function addShape(shape){
     self.shapes.push(shape);
@@ -271,16 +298,17 @@ $(function(){
   function draw(){
     // clear();
     var ctx = this.ctx;
-    ctx.drawImage(tank_1, p1t1mouseX, p1t1mouseY, 36, 36);
-    circle(p1t1mouseX, p1t1mouseY, 10)
-    circle(p1t2mouseX, p1t2mouseY, 10)
-    circle(p1t3mouseX, p1t3mouseY, 10)
+    ctx.drawImage(tank_1, p1t1mouseX, p1t1mouseY, 46, 46);
+    ctx.drawImage(turret_1, p1t1mouseX-15, p1t1mouseY-5, 56, 56)
 
-    circle(p2t1mouseX, p2t1mouseY, 10)
-    circle(p2t2mouseX, p2t2mouseY, 10)
-    circle(p2t3mouseX, p2t3mouseY, 10)
+    ctx.drawImage(tank_1, p1t2mouseX, p1t2mouseY, 36, 36);
 
 
+    ctx.drawImage(tank_1, p1t3mouseX, p1t3mouseY, 36, 36);
+
+    ctx.drawImage(tank_1, p2t1mouseX, p2t1mouseY, 36, 36);
+    ctx.drawImage(tank_1, p2t2mouseX, p2t2mouseY, 36, 36);
+    ctx.drawImage(tank_1, p2t3mouseX, p2t3mouseY, 36, 36);
 
     var shapes = self.shapes;
 
