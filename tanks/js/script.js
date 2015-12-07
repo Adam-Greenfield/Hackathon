@@ -32,6 +32,9 @@ var mySel;
 var mySelColor = '#CC0000';
 var mySelWidth = 2;
 
+var ghostcanvas;
+var gctx;
+
 
 
 
