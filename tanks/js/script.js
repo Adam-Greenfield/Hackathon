@@ -155,8 +155,22 @@
 $(function(){
   canvas = document.getElementById('myCanvas');
 
+
+
   var p1t1mouseX;
   var p1t1mouseY;
+  var p1t2mouseX;
+  var p1t2mouseY;
+  var p1t3mouseX;
+  var p1t3mouseY;
+
+  var p2t1mouseX;
+  var p2t1mouseY;
+  var p2t2mouseX;
+  var p2t2mouseY;
+  var p2t3mouseX;
+  var p2t3mouseY;
+
 
   var self = this
   self.shapes = [];
@@ -202,16 +216,47 @@ $(function(){
     writeMessage(canvas, message);
 
   }, false);
-
+  var turn = 0;
   canvas.addEventListener('click', function(evt){
-    // if(playerOneTurn){
-      var mousePos = getMousePos(canvas, evt);
-      p1t1mouseX = mousePos.mouseX; 
-      p1t1mouseY = mousePos.mouseY;
-    // } else {
 
+    var mousePos = getMousePos(canvas, evt);
+    console.log(turn);
+    switch(turn){
+      case 0:
+        p1t1mouseX = mousePos.mouseX; 
+        p1t1mouseY = mousePos.mouseY;
+        turn += 1;
+        break;
+      case 1:
+        p2t1mouseX = mousePos.mouseX; 
+        p2t1mouseY = mousePos.mouseY;
+        turn += 1;
+        break;
+      case 2:
+        p1t2mouseX = mousePos.mouseX; 
+        p1t2mouseY = mousePos.mouseY;
+        turn += 1;
+        break;
+      case 3:
+        p2t2mouseX = mousePos.mouseX; 
+        p2t2mouseY = mousePos.mouseY;
+        turn += 1;
+        break;
+      case 4:
+        p1t3mouseX = mousePos.mouseX; 
+        p1t3mouseY = mousePos.mouseY;
+        turn += 1;
+        break;
+      case 5:
+        p2t3mouseX = mousePos.mouseX; 
+        p2t3mouseY = mousePos.mouseY;
+        turn += 1;
+        break;
+    }
+    // } else {
+    })
     // }
-})
+  
 
   function addShape(shape){
     self.shapes.push(shape);
@@ -225,6 +270,14 @@ $(function(){
   function draw(){
     // clear();
     circle(p1t1mouseX, p1t1mouseY, 10)
+    circle(p1t2mouseX, p1t2mouseY, 10)
+    circle(p1t3mouseX, p1t3mouseY, 10)
+
+    circle(p2t1mouseX, p2t1mouseY, 10)
+    circle(p2t2mouseX, p2t2mouseY, 10)
+    circle(p2t3mouseX, p2t3mouseY, 10)
+
+
     var ctx = this.ctx;
     var shapes = self.shapes;
 
