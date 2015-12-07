@@ -49,6 +49,8 @@ $(function(){
       // this.turret.rotate(5*Math.PI/180);
     }
   }
+
+
   tank1.rotateTurret();
 
 currentTank = tank1
@@ -213,7 +215,7 @@ currentTank = tank1
     ctx.rotate(tank1.turretAngle);
     ctx.drawImage(tank1.turret, -38, -25, 56, 56);
     ctx.restore();
-
+    ctx.drawImage((circle(tank1.x+32, tank1.y+20, 10)),)
     ctx.drawImage(tank_1, p1t2mouseX, p1t2mouseY, 36, 36);
 
     ctx.drawImage(tank_1, p1t3mouseX, p1t3mouseY, 36, 36);
