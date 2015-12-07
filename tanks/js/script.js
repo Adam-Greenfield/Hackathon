@@ -1,10 +1,23 @@
 $(function(){
   canvas = document.getElementById('myCanvas');
-
+  // fightWar = document.getElementById('fight');
+  //   fightWar.addEventListener('click', function(){
+  //     audio.["audio/test.mp3"].play();
+  //   })
+  // $('canvas').click{
+  //   console.log(click)
+  // };
   // var tank_1 = new Image();
   // tank_1.src = "/css/images/Tank-bottom2.jpg";
+
   // var tank_1 = document.getElementById('tank_1');
   var self = this
+
+  var tank_1 = document.getElementById('tank_1');
+
+  var turret_1 = document.getElementById('turret_1');
+  var ctx = canvas.getContext('2d');
+
 
   var p1t1mouseX;
   var p1t1mouseY;
@@ -20,6 +33,8 @@ $(function(){
   var p2t3mouseX;
   var p2t3mouseY;
 
+  // var audio = getElementId
+
 
 
   var tank1 = {
@@ -27,8 +42,10 @@ $(function(){
     x: p1t1mouseX,
     y: p1t1mouseY,
     turret: document.getElementById('turret_1'),
+    turretAngle: 0,
     rotateTurret: function(){
-      ctx.rotate(5*Math.PI/180);
+      console.log(this.turret);
+      // this.turret.rotate(5*Math.PI/180);
     }
   }
   tank1.rotateTurret();
@@ -49,8 +66,11 @@ currentTank = tank1
     HEIGHT = canvas.height;
     var mouseX;
     var mouseY;
-    drawInterval = setInterval(draw, 1);
+
+    drawInterval = setInterval(draw, 50);
+
   }
+
 
   function circle(x, y, r){
     ctx.beginPath();
@@ -60,11 +80,10 @@ currentTank = tank1
   }
 
   function writeMessage(canvas, message) {
-    var context = canvas.getContext('2d');
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    context.font = '18pt Calibri';
-    context.fillStyle = 'black';
-    context.fillText(message, 10, 25);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.font = '18pt Calibri';
+    ctx.fillStyle = 'black';
+    ctx.fillText(message, 10, 25);
   }
   function getMousePos(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
@@ -72,23 +91,12 @@ currentTank = tank1
       mouseX: Math.round((evt.clientX-rect.left)/(rect.right-rect.left)*canvas.width),
       mouseY: Math.round((evt.clientY-rect.top)/(rect.bottom-rect.top)*canvas.height)
     };
-  }
-
-
-  canvas.addEventListener('mousemove', function(evt) {
-    var mousePos = getMousePos(canvas, evt);
-    var message = 'Mouse position: ' + mousePos.mouseX + ',' + mousePos.mouseY;
-    mouseX = mousePos.mouseX; 
-    mouseY = mousePos.mouseY;
-    // console.log(mouseX, mouseY);
-    writeMessage(canvas, message);
-
-  }, false);
+  };
+  
   var turn = 0;
   canvas.addEventListener('click', function(evt){
 
     var mousePos = getMousePos(canvas, evt);
-    console.log(turn);
     switch(turn){
       case 0:
         tank1.x = mousePos.mouseX; 
@@ -124,13 +132,23 @@ currentTank = tank1
         break;
     }
     // } else {
-    })
-    // }
+  });
+  
+  document.addEventListener('keydown', function(evt) {
+    evt.preventDefault();
+    if(evt.keyCode === 37) {
+      tank1.turretAngle -= 0.2;
+      if(tank1.turretAngle < 0) tank1.turretAngle = 6;
+    }
+    if(evt.keyCode === 39) {
+      tank1.turretAngle += 0.2;
+      if(tank1.turretAngle > 6) tank1.turretAngle = 0;
+    }
+  });
 
 
   function addShape(shape){
     self.shapes.push(shape);
-    console.log(self.shapes);
   }
 
   function clear(){
@@ -138,11 +156,13 @@ currentTank = tank1
   }
 
   function draw(){
-    // clear();
-
-    var ctx = this.ctx;
+    clear();
     ctx.drawImage(tank1.img, tank1.x, tank1.y, 46, 46);
-    ctx.drawImage(tank1.turret, tank1.x-15, tank1.y-5, 56, 56);
+    ctx.save();
+    ctx.translate(tank1.x+32, tank1.y+20);
+    ctx.rotate(tank1.turretAngle);
+    ctx.drawImage(tank1.turret, -38, -25, 56, 56);
+    ctx.restore();
 
     ctx.drawImage(tank_1, p1t2mouseX, p1t2mouseY, 36, 36);
 
