@@ -31,6 +31,11 @@ $(function(){
     turret: turret_1
   }
 
+  var currentTank;
+  function setCurrentTank(tank){
+    currentTank = tank
+  }
+
   var self = this
   self.shapes = [];
 
@@ -115,7 +120,12 @@ $(function(){
     // } else {
     })
     // }
-  
+    $(document).keydown(function(){
+      if(event.keyCode == 65){
+        ctx = currentTank;
+        ctx.rotate
+      }
+    })
 
   function addShape(shape){
     self.shapes.push(shape);

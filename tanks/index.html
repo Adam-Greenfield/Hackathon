@@ -3,6 +3,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-gamequery/0.7.0/jquery.gamequery.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
   <title>Tanks</title>
 </head>
@@ -11,5 +12,8 @@
   </canvas>
   <img src="./css/images/Tank-bottom2.jpg" id="tank_1">
   <img src="./css/images/top1.png" id="turret_1">
+  <button class="tank_button" onclick="setCurrentTank(tank1)">tank 1</button>
+  <button class="tank_button" onclick="setCurrentTank(tank2)">tank 2</button>
+  <button class="tank_button" onclick="setCurrentTank(tank3)">tank 3</button>
 </body>
 </html>
