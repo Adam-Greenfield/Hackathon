@@ -19,7 +19,14 @@
 body {
    /*position: center;*/
    background-image: url(http://thevelvetrocket.files.wordpress.com/2012/05/destroyed-tank-west-bank.jpg);
-   background-size: cover ;
+   background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    margin : 0px;
+    padding : 0px;
+   /* height: 18px;
+    width : 18px;*/
+   /* overflow : hidden;*/
 }
 #myStory {
     font-family: 'Black Ops One', cursive;
