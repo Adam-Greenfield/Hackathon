@@ -13,6 +13,8 @@ $(function(){
   // var tank_1 = document.getElementById('tank_1');
   var self = this
 
+  self.shapes = [];
+
   var tank_1 = document.getElementById('tank_1');
 
   var turret_1 = document.getElementById('turret_1');
@@ -61,17 +63,18 @@ $(function(){
 
   tank1.rotateTurret();
 
-currentTank = tank1
+
+  currentTank = tank1
 
   var currentTank;
   function setCurrentTank(tank){
     currentTank = tank
   }
 
-  var self = this
-  self.shapes = [];
 
 
+
+// INITIAL FUNCTION
   function initialize(){
     ctx = canvas.getContext("2d");
     WIDTH = canvas.width;
@@ -132,7 +135,7 @@ currentTank = tank1
 
 
 
-
+  // SHOTS SHAPE 
   function circle(x, y, r){
     ctx.beginPath();
     ctx.arc(x, y, r, 0, (2* Math.PI));
@@ -140,12 +143,15 @@ currentTank = tank1
     ctx.closePath();
   }
 
+  //  FN - MESSAGE ON CANVAS
   function writeMessage(canvas, message) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = '18pt Calibri';
     ctx.fillStyle = 'black';
     ctx.fillText(message, 10, 25);
   }
+
+  // FN - MOUSE POSITION
   function getMousePos(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
     return {
@@ -197,6 +203,7 @@ currentTank = tank1
     // } else {
   });
   
+  // SETTING KEY LISTENERS
   document.addEventListener('keydown', function(evt) {
     evt.preventDefault();
     if(evt.keyCode === 37) {
@@ -211,7 +218,7 @@ currentTank = tank1
       shot1.x += 5
       shot1.y -= 5
     }
- });
+  });
 
 
   function addShape(shape){
@@ -222,6 +229,7 @@ currentTank = tank1
     ctx.clearRect(0, 0, WIDTH, HEIGHT);
   }
 
+  // FN - DRAWING
   function draw(){
     clear();
     ctx.drawImage(tank1.img, tank1.x, tank1.y, 46, 46);
@@ -249,7 +257,14 @@ currentTank = tank1
         ctx.rotate(5);
       }
     })
-}
+  }
+
+  // FN - TANK ON FIRE
+  function tankOnFire(tank){
+    $('tank').style.visibility = "hidden";
+  }
+
+  tankOnFire(tank_1);
 
 
 
