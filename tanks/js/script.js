@@ -50,13 +50,13 @@ $(function(){
     }
   }
 
-  var shot1 = {
-    x: p1t1mouseX,
-    y: p1t1mouseY,
-    vx: v * cos(angle),
-    vy: v * sin(angle)
+  // var shot1 = {
+  //   x: p1t1mouseX,
+  //   y: p1t1mouseY,
+  //   vx: v * cos(angle),
+  //   vy: v * sin(angle)
 
-  };
+  // };
 
 
   tank1.rotateTurret();
