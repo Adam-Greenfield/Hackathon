@@ -52,7 +52,10 @@ $(function(){
 
   var shot1 = {
     x: p1t1mouseX,
-    y: p1t1mouseY
+    y: p1t1mouseY,
+    vx: v * cos(angle)
+    vy: v * sin(angle)
+
   }
 
 
@@ -205,8 +208,9 @@ currentTank = tank1
     }
     if(evt.keyCode === 32) {
       shot1.x += 5
-      shot1.y += 5
-    } });
+      shot1.y -= 5
+    }
+ });
 
 
   function addShape(shape){
@@ -226,7 +230,7 @@ currentTank = tank1
     ctx.drawImage(tank1.turret, -38, -25, 56, 56);
     ctx.restore();
     console.log(shot1.x)
-    circle(shot1.x, shot1.y, 10);
+    circle(shot1.x, shot1.y, 3);
     ctx.drawImage(tank_1, p1t2mouseX, p1t2mouseY, 36, 36);
 
     ctx.drawImage(tank_1, p1t3mouseX, p1t3mouseY, 36, 36);
