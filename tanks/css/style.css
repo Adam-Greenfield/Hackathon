@@ -27,22 +27,15 @@ body {
     margin-right:auto;
     top: 500px;
     width:1000px; 
-/*    position:relative;*/
+
 }
-/*#myCanvas {
-  float: left;
-}*/
 
-/*.right {
-    float: right;
-    width: 300px;
-    border:3px solid #73AD21;
-    padding: 10px;
-}*/
-/*.fight {
-  float: right;
-}*/
+canvas {
+  border:10px solid #000000;
+  background-image: url(http://i.imgur.com/iwQPz9a.jpg);
 
+   
+}
 #tankFace {
    width: 300px;
     height: auto;
