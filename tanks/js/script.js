@@ -80,44 +80,45 @@ currentTank = tank1
 
   }
 
+// SETTING CANVAS BACKGROUND
     var e1 = document.getElementById("arctic");
     e1.addEventListener('click', function(){
-      $('#myCanvas').css(
+      $('canvas').css(
         {'background-image': 'url(./css/images/arctic.jpg' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
         )
       }, false);
   
     var e2 = document.getElementById("desert");
     e2.addEventListener('click', function(){ 
-      $('#myCanvas').css(
+      $('canvas').css(
         {'background-image': 'url(./css/images/desert.jpg' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
         )
         } , false);
 
     var e3 = document.getElementById("grass");
     e3.addEventListener('click', function(){ 
-      $('#myCanvas').css(
+      $('canvas').css(
         {'background-image': 'url(./css/images/grass.jpg' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
         )
         } , false);
 
     var e4 = document.getElementById("moon");
     e4.addEventListener('click', function(){ 
-      $('#myCanvas').css(
+      $('canvas').css(
         {'background-image': 'url(./css/images/moon.jpg' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
         )
         } , false);
 
     var e5 = document.getElementById("space");
     e5.addEventListener('click', function(){ 
-      $('#myCanvas').css(
+      $('canvas').css(
         {'background-image': 'url(./css/images/space.jpg' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
         )
         } , false);
 
     var e6 = document.getElementById("whitehouse");
     e6.addEventListener('click', function(){ 
-      $('#myCanvas').css(
+      $('canvas').css(
         {'background-image': 'url(./css/images/whitehouse.png' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
         )
         } , false);
