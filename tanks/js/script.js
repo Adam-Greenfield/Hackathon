@@ -81,43 +81,43 @@ currentTank = tank1
   }
 
 // SETTING CANVAS BACKGROUND
-    var e1 = document.getElementById("arctic");
-    e1.addEventListener('click', function(){
+    var arcticButton = document.getElementById("arctic");
+    arcticButton.addEventListener('click', function(){
       $('canvas').css(
         {'background-image': 'url(./css/images/arctic.jpg' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
         )
       }, false);
   
-    var e2 = document.getElementById("desert");
-    e2.addEventListener('click', function(){ 
+    var desertButton = document.getElementById("desert");
+    desertButton.addEventListener('click', function(){ 
       $('canvas').css(
         {'background-image': 'url(./css/images/desert.jpg' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
         )
         } , false);
 
-    var e3 = document.getElementById("grass");
-    e3.addEventListener('click', function(){ 
+    var grassButton = document.getElementById("grass");
+    grassButton.addEventListener('click', function(){ 
       $('canvas').css(
         {'background-image': 'url(./css/images/grass.jpg' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
         )
         } , false);
 
-    var e4 = document.getElementById("moon");
-    e4.addEventListener('click', function(){ 
+    var moonButton = document.getElementById("moon");
+    moonButton.addEventListener('click', function(){ 
       $('canvas').css(
         {'background-image': 'url(./css/images/moon.jpg' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
         )
         } , false);
 
-    var e5 = document.getElementById("space");
-    e5.addEventListener('click', function(){ 
+    var spaceButton = document.getElementById("space");
+    spaceButton.addEventListener('click', function(){ 
       $('canvas').css(
         {'background-image': 'url(./css/images/space.jpg' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
         )
         } , false);
 
-    var e6 = document.getElementById("whitehouse");
-    e6.addEventListener('click', function(){ 
+    var whitehouseButton = document.getElementById("whitehouse");
+    whitehouseButton.addEventListener('click', function(){ 
       $('canvas').css(
         {'background-image': 'url(./css/images/whitehouse.png' /*+ images[Math.floor(Math.random() * images.length)]+ ')'*/}
         )
